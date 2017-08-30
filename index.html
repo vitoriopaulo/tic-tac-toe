@@ -1,10 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles/index.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-<link rel="stylesheet" href="bootstrap-4.0.0-beta-dist/css/bootstrap.min.css"/>
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
   <title> TIC TAC TOE GAME </title>
 </head>
@@ -18,17 +22,20 @@
 </div>
 <div class="col-md-4">
 <ul>
-  <li class="nav-menu"><a href="htmls/login.html"><h6> Log In </h6></a></li>
+  <li class="nav-menu"><a href="htmls/login.html"><h5> Log In </h5></a></li>
+  <br>
   <br>
 
-  <li class="nav-menu"><a href="htmls/signup.html"><h6> Sign Up <h6></a></li>
+  <li class="nav-menu"><a href="htmls/signup.html"><h5> Sign Up <h5></a></li>
+    <br>
     <br>
 
-    <li class="nav-menu"><a href="htmls/changepassword.html"><h6> Change Password  <h6></a></li>
+    <li class="nav-menu"><a href="htmls/changepassword.html"><h5> Change Password <h5></a></li>
+      <br>
       <br>
       <br>
 
-  <li class="nav-menu"><a href="htmls/logout.html"><h6> Log Out </h6></a></li>
+  <li class="nav-menu"><a href="htmls/logout.html"><h5> Log Out </h5></a></li>
 </ul>
 </div>
 </div>
@@ -53,13 +60,35 @@
   <div class="row">
     <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
     <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div> </div>
+    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+  </div>
+<!-- </div> -->
+  <div class="row">
+    <div class="col-md-6 col-xs-6"> <h3> Player 1: </h3><img src="images/o.jpeg" width=40px> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 2: </h3><img src="images/x.jpeg" width=40px> </div>
+  </div>
+<br>
+<br>
+  <div class="row">
+    <div class="col-md-6 col-xs-6 box2"> <h4> Player 1 Wins: " " </h4></div>
+    <div class="col-md-6 col-xs-6 box2"> <h4> Player 2 Wins: " " </h4></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-6 box2" > <h4> Draws: " " </h4></div>
+    <div class="col-md-6 col-xs-6 box2"> <h4> Total Games: " " </h4></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-6 box3" > <button class="btn btn-default new-game">
+      New Game!</button></div>
+    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default new-game">
+      Save Game!</button></div>
   </div>
 </div>
 <br>
 <br>
 <br>
-
 <footer class="footer"> <p class="copyright"> Copyright 2017 ::
 Created with much &hearts; by Vitorio Paulo for
 GA</p>
