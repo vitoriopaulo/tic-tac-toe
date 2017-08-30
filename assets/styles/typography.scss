@@ -1,0 +1,26 @@
+.header {
+  max-width: 600px;
+  max-height: 300px;
+  margin: 0 auto;
+  background-color: $bg-header-color;
+  color: $header-color;
+}
+
+.title {
+  font-size: 48px;
+  font-family: 'Monoton', cursive;
+}
+
+.body {
+  margin: 0 auto;
+  background-color: $body-bg-color;
+  color: $header-color;
+}
+
+.footer {
+  max-width: 600px;
+  max-height: 300px;
+  margin: 0 auto;
+  background-color: $bg-header-color;
+  color: $header-color
+}
