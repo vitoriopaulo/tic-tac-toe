@@ -4,49 +4,71 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 header {
-  max-width: 600px;
-  max-height: 600px;
-  margin: 0 auto;
+  // max-width: 600px;
+  max-height: 200px;
+  margin-left: 0;
   margin-top: 0;
   text-align: left;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(205, 0, 203);
   color: rgb(220, 255, 48);
-  padding: 12px;
+  padding: 30px 20px 30px 20px;
 }
 
 .title {
-  font-size: 54px;
+  font-size: 64px;
   font-family: 'Monoton', cursive;
-  padding-top: 12px;
-  padding-left: 12px;
-  padding-bottom: 12px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-bottom: 24px;
 }
 
-/*h3 {
-  font-size: 12px;
-  font-family: 'Monoton', cursive;
-}*/
+.nav-menu {
+color: rgb(220, 255, 48);
+padding-botton: 64px;
+}
+
+a {
+  color: rgb(220, 255, 48);
+  cursor: auto;
+  text-decoration: none;
+  margin: 0 20px 0 20px;
+}
+
+a:hover {
+  border-bottom: 2px solid;
+  color: white;
+}
 
 ul {
-  float:left;
-  pading: 0px;
+  // float:left;
+  padding-bottom: 128px;
+  padding-top: -64px;
   margin: 0px;
-  botton: 30px;
+  // botton: 30px;
 }
 
 li {
   display: block;
-  float: left;
-  padding: 0 12px 0 12px;
-  botton: 0;
+  // float: left;
+  padding: 12px 12px 12px 12px;
+  botton: 0px;
   margin: 6px;
-  height: 0px;
+  height: 12px;
 }
 
-body {
-  margin: 0 auto;
-  /*background-color: rgb(150, 150, 150);*/
-  color: rgb(170, 250, 70);
+html, body {
+  max-height: 2400px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  // color: rgb(170, 250, 70);
+}
+
+.message {
+  color: rgb(205, 0, 203);
+  font-family: 'Montserrat', cursive;
+  font-size: 18px;
+  text-align: center;
 }
 
 .img {
@@ -67,7 +89,7 @@ body {
 .box {
   width: 160px;
   height: 160px;
-  border: 6px solid black;
+  border: 6px solid gray;
   background-color: white;
 }
 
@@ -91,19 +113,37 @@ body {
 h3, h4 {
   color: rgb(56, 87, 196);
   font-family: 'Montserrat', cursive;
+  font-size: 18px;
 }
 
-.new-game {
+.my-input {
+  color: rgb(205, 0, 203);
+  width: 400px;
+  height: 45px;
+  font-size: 'Montserrat', cursive;
+  font-size: 18px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid rgb(205, 0, 203);
+}
+
+.button {
   background-color: rgb(202, 111, 255);
 }
 
 footer {
-  max-width: 600px;
   max-height: 300px;
   font-size: 18px;
   font-family: 'Montserrat', cursive;
-  margin: 0 auto;
-  background-color: black;
+  // margin: 0;
+  background-color: rgb(205, 0, 203);
   color: rgb(220, 255, 48);
   padding: 12px;
+}
+
+.copyright {
+  color: rgb(220, 255, 48);
+  font-family: 'Montserrat', cursive;
+  font-size: 36px;
 }

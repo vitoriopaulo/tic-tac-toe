@@ -18,32 +18,86 @@
 
 <div class="row">
   <div class="col-md-8">
-  <h1 class="title"> TIC  TAC  TOE  GAME </h1>
+  <h1 class="title"> TIC   TAC   TOE   GAME </h1>
 </div>
 <div class="col-md-4">
-<ul>
-  <li class="nav-menu"><a href="htmls/login.html"><h5> Log In </h5></a></li>
-  <br>
-  <br>
-
-  <li class="nav-menu"><a href="htmls/signup.html"><h5> Sign Up <h5></a></li>
-    <br>
-    <br>
-
-    <li class="nav-menu"><a href="htmls/changepassword.html"><h5> Change Password <h5></a></li>
-      <br>
-      <br>
-      <br>
-
-  <li class="nav-menu"><a href="htmls/logout.html"><h5> Log Out </h5></a></li>
+<ul class="nav-menu">
+  <li><a href="#"><h4> Log In </h4></a></li>
+  <!-- <br> -->
+  <li><a href="#"><h4> Sign Up <h4></a></li>
+  <!-- <br> -->
+  <li><a href="#"><h4> Change Password <h4></a></li>
+  <!-- <br> -->
+  <li><a href="#"><h4> Log Out </h4></a></li>
 </ul>
 </div>
 </div>
 
 </header>
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
+<!-- part of the code related to authentication -->
 
+<!-- <p id="message" class="message"> </p> -->
+<p id="message" class="message"> </p>
+<br>
+<br>
+<h1>Tic Tac Toe Game!</h1>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
+          <br>
+          <br>
+          <input type="text" name="credentials[password]" placeholder="Your password here." class="my-input">
+          <br>
+          <br>
+          <input type="text" name="credentials[password_confirmation]" placeholder="Confirm password." class="my-input">
+          <br>
+          <br>
+          <button type="submit" name="submit" value="Sign Up!" class="btn btn-default button">
+            Sign Up!</button>
+
+          <!-- <input type="submit" name="submit" value="Sign up!" class="button"> -->
+        </fieldset>
+      </form>
+      <br>
+      <br>
+      <form id="log-in">
+        <fieldset>
+          <legend>Log In!</legend>
+          <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
+          <br>
+          <br>
+          <input type="text" name="credentials[password]" placeholder="Your password here." class="my-input">
+          <br>
+          <br>
+          <button type="submit" name="submit" value="Log In!" class="btn btn-default button">
+            Log In!</button>
+
+          <!-- <input type="submit" name="submit" value="Log In!" class="button"> -->
+        </fieldset>
+      </form>
+      <br>
+      <br>
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password:</legend>
+          <input type="text" name="passwords[old]" placeholder="Old password here." class="my-input">
+          <br>
+          <br>
+          <input type="text" name="passwords[new]" placeholder="New password here." class="my-input">
+          <br>
+          <br>
+          <button type="submit" name="submit" value="Change Password!" class="btn btn-default button">
+            Change Password!</button>
+          <!-- <input type="submit" name="submit" value="Change Password!" class="button"> -->
+        </fieldset>
+      </form>
+
+<br>
+<br>
+<!-- part of the code that defines the game board -->
 <div class="container-fluid main-div">
   <div class="row">
     <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
@@ -80,9 +134,9 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-6 box3" > <button class="btn btn-default new-game">
+    <div class="col-md-6 col-xs-6 box3" > <button class="btn btn-default button">
       New Game!</button></div>
-    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default new-game">
+    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default button">
       Save Game!</button></div>
   </div>
 </div>
