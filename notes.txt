@@ -1,0 +1,28 @@
+// 1st step: writting a code that represents the game.
+// The game can be represented as an array, where each square is defined by
+// the value of the player ( O or X ) and an id, so each square can be
+// identified by this Id. Each player needs to be defined by the use of 0 or X.
+// At this point we have already discovered that
+// we'll need to set up 3 initial variables: player1, player2 and game. We
+// can set the value for player1 O and the value for player2 X. For
+// all the effects, each new game is an empty array, waiting for all 9
+// squares to receive the inputs of the players (values 0 and X). As soon
+// as the game is done, we have a game finished. We have the goal to storage
+// the games. The games can be storaged in an object. Let's start coding  //
+
+
+// EX: game1 = [ 'O', 'X', 'X',
+//  'O', 'O', 'X'
+//    'X', 'O', 'O']
+//
+// In the example of the game above, the 0 is the winner. Why? In order to win
+// the game, the player needs to draw a line with the values. which can be in a
+// row, in a column or in a diagonal. As a result, there's only
+// 8 possibilities for a player to win the game. The player O in particular won
+// the game because the 0s make a line in the diagonal assigned by the squares
+// of indexs 0, 4 and 8.
+
+// In order to start playing the very first game, let's assign the player 1 as
+// the player that will start the game. The array representing the game needs
+// to be filled. Let's write code for this. Let's create a variable called
+// newGame.

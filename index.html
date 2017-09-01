@@ -63,9 +63,9 @@
       </form>
       <br>
       <br>
-      <form id="log-in">
+      <form id="sign-in">
         <fieldset>
-          <legend>Log In!</legend>
+          <legend>Sign In!</legend>
           <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
           <br>
           <br>
@@ -73,7 +73,7 @@
           <br>
           <br>
           <button type="submit" name="submit" value="Log In!" class="btn btn-default button">
-            Log In!</button>
+            Sign In!</button>
 
           <!-- <input type="submit" name="submit" value="Log In!" class="button"> -->
         </fieldset>
@@ -97,24 +97,25 @@
 
 <br>
 <br>
+<h3 id="result-message"> <h3>
 <!-- part of the code that defines the game board -->
 <div class="container-fluid main-div">
   <div class="row">
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div id="index0" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div id="index1" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
+    <div id="index2" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
   </div>
 
   <div class="row">
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
+    <div id="index3" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div id="index4" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div id="index5" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
   </div>
 
   <div class="row">
-    <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div  id="index6" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
+    <div id="index7" class="col-md-4 col-xs-4 box">  </div>
+    <div id="index8" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
   </div>
 <!-- </div> -->
   <div class="row">
@@ -147,5 +148,8 @@
 Created with much &hearts; by Vitorio Paulo for
 GA</p>
 </footer>
+<!-- <script>
+$("div[id^='index']").append("<img src='images/o.jpeg' />");
+</script> -->
 </body>
 </html>
