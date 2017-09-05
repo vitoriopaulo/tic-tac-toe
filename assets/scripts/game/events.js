@@ -1,142 +1,97 @@
+// Defining the players of the game
+const player1 = 'O'
+const player2 = 'X'
 
-// const player = {
-// player1: 'O',
-// player2: 'X'
-// }
+// Defining a variable that represents the game
+let game =
+  [ ' ', ' ', ' ',
+    ' ', ' ', ' ',
+    ' ', ' ', ' ']
 
-const click = function () {
-  $("div[id^='index']").append("<img src='images/o.jpeg' />")
+// Defining an accumulattor for the clicks of the ongoing game
+let click = 0
+
+// Defining the game being played
+const onClickGameBoard = function (event) {
+  // Outputing the result of the game once it ends
+  const gameResult = function () {
+    if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
+       (game[7] === 'O' && game[5] === 'O' && game[3] === 'O') ||
+       (game[0] === 'O' && game[1] === 'O' && game[2] === 'O') ||
+       (game[3] === 'O' && game[4] === 'O' && game[5] === 'O') ||
+       (game[6] === 'O' && game[7] === 'O' && game[8] === 'O') ||
+       (game[0] === 'O' && game[3] === 'O' && game[6] === 'O') ||
+       (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
+       (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
+      console.log('Player1 is the Winner! Congrats! :)!')
+      $('#result-message').text('Player1 is the Winner! Congrats! :)!')
+      return 'Player1 is the Winner! Congrats! :)!'
+    } else if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
+                (game[7] === 'X' && game[5] === 'X' && game[3] === 'X') ||
+                (game[0] === 'X' && game[1] === 'X' && game[2] === 'X') ||
+                (game[3] === 'X' && game[4] === 'X' && game[5] === 'X') ||
+                (game[6] === 'X' && game[7] === 'X' && game[8] === 'X') ||
+                (game[0] === 'X' && game[3] === 'X' && game[6] === 'X') ||
+                (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
+                (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
+      console.log('Player2 is the Winner! Congrats! :)!')
+      $('#result-message').text('Player2 is the Winner! Congrats! :)!')
+      return 'Player2 is the Winner! Congrats! :)!'
+    } else if (click === 8) {
+      console.log('There is no Winner at this time. Game is a draw, try again :(')
+      $('#result-message').text('There is no Winner at this time. Game is a draw, try again :(')
+      return 'There is no Winner at this time. Game is a draw, try again :('
+    }
+  }
+  // Avoiding one of the players to click in a box that have been already
+  // clicked. Outputing a message on the screen to say that the box has been
+  // already clicked and instructing the player to click in another box.
+  if (game[$(this).attr('id')] === player1 ||
+    game[$(this).attr('id')] === player2) {
+    $('#result-message').text('Box already selected. Click on an empty box.')
+    return false
+  }
+  // Defining the turns of the players and the update on the game board when
+  // the player clicks on an square
+  if (click % 2 === 0) {
+    console.log('It is player2 turn now.')
+    $('#result-message').text('It is player2 turn now.')
+    $(this).append("<img class='img' src='images/o.jpeg' />")
+    game[$(this).attr('id')] = 'O'
+    $(this).attr('id')
+    console.log($(this).attr('id'))
+  } else if (click % 2 === 1) {
+    console.log('It is player1 turn now.')
+    $('#result-message').text('It is player1 turn now.')
+    $(this).append("<img class='img' src='images/x.jpeg' />")
+    game[$(this).attr('id')] = 'X'
+    $(this).attr('id')
+    console.log($(this).attr('id'))
+  }
+  // Outputing the result of the game
+  gameResult()
+
+  // Working on the click accumulator
+  click += 1
+}
+// Defining a function  to reset the game board
+const resetGameBoard = function () {
+  // resetting the click
+  click = 0
+  // resetting the images
+  $('.img').remove()
+  // resetting the Os and Xs and empty spaces of the the game
+  game =
+  [ ' ', ' ', ' ',
+    ' ', ' ', ' ',
+    ' ', ' ', ' ']
+  // resetting the messages
+  $('#result-message').text('Player 1 starts')
 }
 
-// let game = function (click, player){
-//   [ ' ', ' ', ' ',
-//   ' ', ' ', ' ',
-//     ' ', ' ', ' ']
-//   }
+// Starting a new game
+$('#new-game').click(resetGameBoard)
 
-//  let game = function (click, player){
-//    click().player1
-//    click().player2
-//   }
-//
-// const gameWinner = {
-//   winnerPlayer1: [
-//   ['O', ' ', ' ',
-//    ' ', 'O', ' ',
-//    ' ', ' ', 'O'],
-//
-//    [' ', ' ', 'O',
-//     ' ', 'O', ' ',
-//     'O', ' ', ' '],
-//
-//    ['O', 'O', 'O',
-//      ' ', ' ', ' ',
-//      ' ', ' ', ' '],
-//
-//    [' ', ' ', ' ',
-//     'O', 'O', 'O',
-//     ' ', ' ', ' '],
-//
-//    [' ', ' ', ' ',
-//     ' ', ' ', ' ',
-//     'O', 'O', 'O'],
-//
-//    ['O', ' ', ' ',
-//     'O', ' ', ' ',
-//     'O', ' ', ' '],
-//
-//    [' ', 'O', ' ',
-//     ' ', 'O', ' ',
-//     ' ', 'O', ' '],
-//
-//    [' ', ' ', 'O',
-//     ' ', ' ', 'O',
-//     ' ', ' ', 'O'],
-// ],
-//
-// winnerPlayer2: [
-//   ['X', ' ', ' ',
-//    ' ', 'X', ' ',
-//    ' ', ' ', 'X'],
-//
-//    [' ', ' ', 'X',
-//     ' ', 'X', ' ',
-//     'X', ' ', ' '],
-//
-//    ['X', 'X', 'X',
-//     ' ', ' ', ' ',
-//     ' ', ' ', ' '],
-//
-//    [' ', ' ', ' ',
-//     'X', 'X', 'X',
-//     ' ', ' ', ' '],
-//
-//    [' ', ' ', ' ',
-//     ' ', ' ', ' ',
-//     'X', 'X', 'X'],
-//
-//    ['X', ' ', ' ',
-//     'X', ' ', ' ',
-//     'X', ' ', ' '],
-//
-//    [' ', 'X', ' ',
-//     ' ', 'X', ' ',
-//     ' ', 'X', ' '],
-//
-//    [' ', ' ', 'X',
-//     ' ', ' ', 'X',
-//     ' ', ' ', 'X'],
-//   ]
-// }
-// //Defining a click accumulator
-//
-// const clicks = 0
-//
-// const click = function () {
-//  $("div[id^='index']").on('click', player)
-// }
-//
-// // while (clicks < 5) {
-// //   console.log('Game is being played')
-// //   clicks += 1
-// // }
-// // return clicks
-// // }
-// //
-// // if (clicks >= 5 && <=9) {
-// //   console.log("Game Over!")
-// // }
-//
-// const newGame = function (game, player) {
-// this.player1.$(this.click)
-// this.player2.$(this.click)
-// }
-//
-// // var indices = [];
-// // var array = ['a', 'b', 'a', 'c', 'a', 'd'];
-// // var element = 'a';
-// // var idx = array.indexOf(element);
-// // while (idx != -1) {
-// //   indices.push(idx);
-// //   idx = array.indexOf(element, idx + 1);
-// // }
-// // console.log(indices);
-// // // [0, 2, 4]
-//
-// // Writing code to compare the game played with the games that defines a
-// //winner, so we can output a result.
-// const gameResult = function (newGame, gameWinner) {
-// if (newGame.indexOf(this.player1) === winner.winnerPlayer1['0']) {
-//   console.log('Player 1 is the winner! Congrats.')
-//   $('#result-message').text('Player 1 is the winner! Congrats.')
-//   return 'Player 1 is the winner! Congrats.'
-// } else (newGame.indexOf(this.player2) === winner.winnerPlayer2['X']) {
-//   console.log('Player 2 is the winner! Congrats.')
-//   $('#result-message').text('Player 2 is the winner! Congrats.')
-//   return 'Player 2 is the winner! Congrats.'
-// } else if {
-//   console.log('Game result is a draw. No one won this time. :(')
-//   $('#result-message').text('Game result is a draw. No one won this time. :(')
-//   return 'Game result is a draw. No one won this time. :('
-// }
-// }
+module.exports = {
+  onClickGameBoard
+}

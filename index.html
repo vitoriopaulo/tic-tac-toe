@@ -22,9 +22,9 @@
 </div>
 <div class="col-md-4">
 <ul class="nav-menu">
-  <li><a href="#"><h4> Log In </h4></a></li>
+  <li><a href="#"><h4> Sign Up </h4></a></li>
   <!-- <br> -->
-  <li><a href="#"><h4> Sign Up <h4></a></li>
+  <li><a href="#"><h4> Sign In <h4></a></li>
   <!-- <br> -->
   <li><a href="#"><h4> Change Password <h4></a></li>
   <!-- <br> -->
@@ -38,7 +38,6 @@
 <!-- <br> -->
 <!-- part of the code related to authentication -->
 
-<!-- <p id="message" class="message"> </p> -->
 <p id="message" class="message"> </p>
 <br>
 <br>
@@ -55,7 +54,7 @@
           <input type="text" name="credentials[password_confirmation]" placeholder="Confirm password." class="my-input">
           <br>
           <br>
-          <button type="submit" name="submit" value="Sign Up!" class="btn btn-default button">
+          <button type="submit" name="submit" value="Sign Up!" class="btn btn-default button2">
             Sign Up!</button>
 
           <!-- <input type="submit" name="submit" value="Sign up!" class="button"> -->
@@ -72,7 +71,7 @@
           <input type="text" name="credentials[password]" placeholder="Your password here." class="my-input">
           <br>
           <br>
-          <button type="submit" name="submit" value="Log In!" class="btn btn-default button">
+          <button type="submit" name="submit" value="Log In!" class="btn btn-default button2">
             Sign In!</button>
 
           <!-- <input type="submit" name="submit" value="Log In!" class="button"> -->
@@ -89,11 +88,21 @@
           <input type="text" name="passwords[new]" placeholder="New password here." class="my-input">
           <br>
           <br>
-          <button type="submit" name="submit" value="Change Password!" class="btn btn-default button">
+          <button type="submit" name="submit" value="Change Password!" class="btn btn-default button2">
             Change Password!</button>
           <!-- <input type="submit" name="submit" value="Change Password!" class="button"> -->
         </fieldset>
       </form>
+<br>
+<br>
+<form id="sign-out">
+  <fieldset>
+    <legend>Sign Out!</legend>
+    <button type="submit" name="submit" value="Sign Out!" class="btn btn-default button2">
+      Sign Out!</button>
+    <!-- <input type="submit" name="submit" value="Change Password!" class="button"> -->
+  </fieldset>
+</form>
 
 <br>
 <br>
@@ -101,26 +110,26 @@
 <!-- part of the code that defines the game board -->
 <div class="container-fluid main-div">
   <div class="row">
-    <div id="index0" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div id="index1" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div id="index2" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div id="0" class="col-md-4 col-xs-4 box">  </div>
+    <div id="1" class="col-md-4 col-xs-4 box">  </div>
+    <div id="2" class="col-md-4 col-xs-4 box">  </div>
   </div>
 
   <div class="row">
-    <div id="index3" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div id="index4" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
-    <div id="index5" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
+    <div id="3" class="col-md-4 col-xs-4 box">  </div>
+    <div id="4" class="col-md-4 col-xs-4 box">  </div>
+    <div id="5" class="col-md-4 col-xs-4 box">  </div>
   </div>
 
   <div class="row">
-    <div  id="index6" class="col-md-4 col-xs-4 box"> <img src="images/x.jpeg" class="img"> </div>
-    <div id="index7" class="col-md-4 col-xs-4 box">  </div>
-    <div id="index8" class="col-md-4 col-xs-4 box"> <img src="images/o.jpeg" class="img"> </div>
+    <div  id="6" class="col-md-4 col-xs-4 box">  </div>
+    <div id="7" class="col-md-4 col-xs-4 box">  </div>
+    <div id="8" class="col-md-4 col-xs-4 box"> </div>
   </div>
 <!-- </div> -->
   <div class="row">
-    <div class="col-md-6 col-xs-6"> <h3> Player 1: </h3><img src="images/o.jpeg" width=40px> </div>
-    <div class="col-md-6 col-xs-6"> <h3> Player 2: </h3><img src="images/x.jpeg" width=40px> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 1: <img src="./images/o.jpeg" width=60px> </h3> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 2: <img src="./images/x.jpeg" width=60px> </h3> </div>
   </div>
 <br>
 <br>
@@ -130,12 +139,12 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-6 box2" > <h4> Draws: " " </h4></div>
-    <div class="col-md-6 col-xs-6 box2"> <h4> Total Games: " " </h4></div>
+    <div class="col-md-6 col-xs-6 box2" > <h4> Draws: <h4 id="draws"> <h4> </h4></div>
+    <div class="col-md-6 col-xs-6 box2"> <h4> Total Games: <h4 id="total-games"> </h4></h4></div>
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-6 box3" > <button class="btn btn-default button">
+    <div class="col-md-6 col-xs-6 box3" > <button id="new-game" class="btn btn-default button">
       New Game!</button></div>
     <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default button">
       Save Game!</button></div>
@@ -149,7 +158,7 @@ Created with much &hearts; by Vitorio Paulo for
 GA</p>
 </footer>
 <!-- <script>
-$("div[id^='index']").append("<img src='images/o.jpeg' />");
+
 </script> -->
 </body>
 </html>

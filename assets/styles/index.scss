@@ -24,7 +24,8 @@ header {
 
 .nav-menu {
 color: rgb(220, 255, 48);
-padding-botton: 64px;
+padding-botton: 0px;
+// border-left: 6px solid gray;
 }
 
 a {
@@ -35,7 +36,8 @@ a {
 }
 
 a:hover {
-  border-bottom: 2px solid;
+  border-bottom: 6px solid;
+  padding-top: 6px;
   color: white;
 }
 
@@ -95,7 +97,7 @@ html, body {
 
 .box2 {
   width: 240px;
-  height: 60px;
+  height: 90px;
   border: 3px solid gray;
   background-color: white;
   text-align: center;
@@ -130,6 +132,14 @@ h3, h4 {
 
 .button {
   background-color: rgb(202, 111, 255);
+  text-align: center;
+  margin-left: 420px;
+}
+
+.button2 {
+  background-color: rgb(202, 111, 255);
+  text-align: center;
+  margin-left: 0 auto;
 }
 
 footer {
