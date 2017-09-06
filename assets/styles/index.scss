@@ -23,42 +23,6 @@ header {
   text-align: center;
 }
 
-.nav-menu {
-color: rgb(220, 255, 48);
-padding-botton: 0px;
-// border-left: 6px solid gray;
-}
-
-a {
-  color: rgb(220, 255, 48);
-  cursor: auto;
-  text-decoration: none;
-  margin: 0 20px 0 20px;
-}
-
-a:hover {
-  border-bottom: 6px solid;
-  padding-top: 6px;
-  color: white;
-}
-
-ul {
-  // float:left;
-  padding-bottom: 128px;
-  padding-top: -64px;
-  margin: 0px;
-  // botton: 30px;
-}
-
-li {
-  display: block;
-  // float: left;
-  padding: 12px 12px 12px 12px;
-  botton: 0px;
-  margin: 6px;
-  height: 12px;
-}
-
 html, body {
   max-height: 2400px;
   margin: 0;
