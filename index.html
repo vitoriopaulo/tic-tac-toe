@@ -17,20 +17,8 @@
 <header>
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
   <h1 class="title"> TIC   TAC   TOE   GAME </h1>
-</div>
-<div class="col-md-4">
-<ul class="nav-menu">
-  <li><a href="#"><h4> Sign Up </h4></a></li>
-  <!-- <br> -->
-  <li><a href="#"><h4> Sign In <h4></a></li>
-  <!-- <br> -->
-  <li><a href="#"><h4> Change Password <h4></a></li>
-  <!-- <br> -->
-  <li><a href="#"><h4> Log Out </h4></a></li>
-</ul>
-</div>
 </div>
 
 </header>
@@ -48,10 +36,10 @@
           <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
           <br>
           <br>
-          <input type="text" name="credentials[password]" placeholder="Your password here." class="my-input">
+          <input type="text" type="hidden" name="credentials[password]" placeholder="Your password here." class="my-input">
           <br>
           <br>
-          <input type="text" name="credentials[password_confirmation]" placeholder="Confirm password." class="my-input">
+          <input type="text" type:"hidden" name="credentials[password_confirmation]" placeholder="Confirm password." class="my-input">
           <br>
           <br>
           <button type="submit" name="submit" value="Sign Up!" class="btn btn-default button2">
