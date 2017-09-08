@@ -56,14 +56,14 @@ const onClickGameBoard = function (event) {
   if (click % 2 === 0) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
-    $(this).append("<img class='img' src='images/x.jpeg' />")
+    $(this).append("<img class='img' src='http://i.imgur.com/9AsTwDZ.jpg' />")
     game[$(this).attr('id')] = 'X'
     $(this).attr('id')
     console.log($(this).attr('id'))
   } else if (click % 2 === 1) {
     console.log('It is player1 turn now.')
     $('#result-message').text('It is player1 turn now.')
-    $(this).append("<img class='img' src='images/O.jpeg' />")
+    $(this).append("<img class='img' src='https://i.imgur.com/DiXKSpi.jpg' />")
     game[$(this).attr('id')] = 'O'
     $(this).attr('id')
     console.log($(this).attr('id'))
