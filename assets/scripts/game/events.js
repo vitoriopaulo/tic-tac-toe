@@ -1,6 +1,6 @@
 // Defining the players of the game
-const player1 = 'O'
-const player2 = 'X'
+const player1 = 'X'
+const player2 = 'O'
 
 // Defining a variable that represents the game
 let game =
@@ -15,25 +15,25 @@ let click = 0
 const onClickGameBoard = function (event) {
   // Outputing the result of the game once it ends
   const gameResult = function () {
-    if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
-       (game[7] === 'O' && game[5] === 'O' && game[3] === 'O') ||
-       (game[0] === 'O' && game[1] === 'O' && game[2] === 'O') ||
-       (game[3] === 'O' && game[4] === 'O' && game[5] === 'O') ||
-       (game[6] === 'O' && game[7] === 'O' && game[8] === 'O') ||
-       (game[0] === 'O' && game[3] === 'O' && game[6] === 'O') ||
-       (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
-       (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
+    if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
+       (game[7] === 'X' && game[5] === 'X' && game[3] === 'X') ||
+       (game[0] === 'X' && game[1] === 'X' && game[2] === 'X') ||
+       (game[3] === 'X' && game[4] === 'X' && game[5] === 'X') ||
+       (game[6] === 'X' && game[7] === 'X' && game[8] === 'X') ||
+       (game[0] === 'X' && game[3] === 'X' && game[6] === 'X') ||
+       (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
+       (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
       console.log('Player1 is the Winner! Congrats! :)!')
       $('#result-message').text('Player1 is the Winner! Congrats! :)!')
       return 'Player1 is the Winner! Congrats! :)!'
-    } else if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
-                (game[7] === 'X' && game[5] === 'X' && game[3] === 'X') ||
-                (game[0] === 'X' && game[1] === 'X' && game[2] === 'X') ||
-                (game[3] === 'X' && game[4] === 'X' && game[5] === 'X') ||
-                (game[6] === 'X' && game[7] === 'X' && game[8] === 'X') ||
-                (game[0] === 'X' && game[3] === 'X' && game[6] === 'X') ||
-                (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
-                (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
+    } else if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
+                (game[7] === 'O' && game[5] === 'O' && game[3] === 'O') ||
+                (game[0] === 'O' && game[1] === 'O' && game[2] === 'O') ||
+                (game[3] === 'O' && game[4] === 'O' && game[5] === 'O') ||
+                (game[6] === 'O' && game[7] === 'O' && game[8] === 'O') ||
+                (game[0] === 'O' && game[3] === 'O' && game[6] === 'O') ||
+                (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
+                (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
       console.log('Player2 is the Winner! Congrats! :)!')
       $('#result-message').text('Player2 is the Winner! Congrats! :)!')
       return 'Player2 is the Winner! Congrats! :)!'
@@ -56,15 +56,15 @@ const onClickGameBoard = function (event) {
   if (click % 2 === 0) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
-    $(this).append("<img class='img' src='images/o.jpeg' />")
-    game[$(this).attr('id')] = 'O'
+    $(this).append("<img class='img' src='images/x.jpeg' />")
+    game[$(this).attr('id')] = 'X'
     $(this).attr('id')
     console.log($(this).attr('id'))
   } else if (click % 2 === 1) {
     console.log('It is player1 turn now.')
     $('#result-message').text('It is player1 turn now.')
-    $(this).append("<img class='img' src='images/x.jpeg' />")
-    game[$(this).attr('id')] = 'X'
+    $(this).append("<img class='img' src='images/O.jpeg' />")
+    game[$(this).attr('id')] = 'O'
     $(this).attr('id')
     console.log($(this).attr('id'))
   }
@@ -80,13 +80,13 @@ const resetGameBoard = function () {
   click = 0
   // resetting the images
   $('.img').remove()
-  // resetting the Os and Xs and empty spaces of the the game
+  // resetting the Os and Xs and empty spaces of the game
   game =
   [ ' ', ' ', ' ',
     ' ', ' ', ' ',
     ' ', ' ', ' ']
   // resetting the messages
-  $('#result-message').text('Player 1 starts')
+  $('#result-message').text('Player 1 starts:')
 }
 
 // Starting a new game

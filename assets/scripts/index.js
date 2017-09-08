@@ -16,7 +16,7 @@ $(() => {
 // require('./example')
 $(() => {
   authEvents.addHandlers()
-
+  $('.signed-in-page').hide()
   $('.box').click(gameEvents.onClickGameBoard)
   // $('#total-games').append(gameEvents.totalGames)
   // $('#draws').append(gameEvents.numberOfDraws)

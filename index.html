@@ -22,15 +22,16 @@
 </div>
 
 </header>
-<!-- <br> -->
-<!-- <br> -->
+<br>
+<br>
+
 <!-- part of the code related to authentication -->
 
 <p id="message" class="message"> </p>
 <br>
 <br>
 <h1>Tic Tac Toe Game!</h1>
-      <form id="sign-up">
+      <form class="starting-page" id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
@@ -50,7 +51,7 @@
       </form>
       <br>
       <br>
-      <form id="sign-in">
+      <form class="starting-page" id="sign-in">
         <fieldset>
           <legend>Sign In!</legend>
           <input type="text" name="credentials[email]" placeholder="Your email here." class="my-input">
@@ -67,7 +68,7 @@
       </form>
       <br>
       <br>
-      <form id="change-password">
+      <form class="signed-in-page" id="change-password">
         <fieldset>
           <legend>Change Password:</legend>
           <input type="password" name="passwords[old]" placeholder="Old password here." class="my-input">
@@ -83,7 +84,7 @@
       </form>
 <br>
 <br>
-<form id="sign-out">
+<form class="signed-in-page" id="sign-out">
   <fieldset>
     <legend>Sign Out!</legend>
     <button type="submit" name="submit" value="Sign Out!" class="btn btn-default button2">
@@ -94,9 +95,9 @@
 
 <br>
 <br>
-<h3 id="result-message"> <h3>
+<h3 id="result-message"> </h3>
 <!-- part of the code that defines the game board -->
-<div class="container-fluid main-div">
+<div class="container-fluid main-div signed-in-page">
   <div class="row">
     <div id="0" class="col-md-4 col-xs-4 box">  </div>
     <div id="1" class="col-md-4 col-xs-4 box">  </div>
@@ -116,14 +117,14 @@
   </div>
 <!-- </div> -->
   <div class="row">
-    <div class="col-md-6 col-xs-6"> <h3> Player 1: <img src="./images/o.jpeg" width=60px> </h3> </div>
-    <div class="col-md-6 col-xs-6"> <h3> Player 2: <img src="./images/x.jpeg" width=60px> </h3> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 1: <img src=".assets/images/x.jpeg" width=60px> </h3> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 2: <img src=".assets/images/o.jpeg" width=60px> </h3> </div>
   </div>
 <br>
 <br>
   <div class="row">
-    <div class="col-md-6 col-xs-6 box2"> <h4> Player 1 Wins: " " </h4></div>
-    <div class="col-md-6 col-xs-6 box2"> <h4> Player 2 Wins: " " </h4></div>
+    <div class="col-md-6 col-xs-6 box2"> <h4> Player 1 Wins:  </h4></div>
+    <div class="col-md-6 col-xs-6 box2"> <h4> Player 2 Wins:  </h4></div>
   </div>
 
   <div class="row">
@@ -132,9 +133,9 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-6 box3" > <button id="new-game" class="btn btn-default button">
+    <div class="col-md-6 col-xs-6 box3" > <button id="new-game" class="btn btn-default button signed-in-page">
       New Game!</button></div>
-    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default button">
+    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default button signed-in-page">
       Save Game!</button></div>
   </div>
 </div>

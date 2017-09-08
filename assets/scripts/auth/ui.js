@@ -3,31 +3,33 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   console.log(data)
-  console.log('Sucessfully signed up!')
-  $('#message').text('Sucessfully signed up!')
+  console.log('Sucessfully signed up! Sign In and start playing! :)')
+  $('#message').text('Sucessfully signed up! Sign In and start playing! :)')
 }
 
 const signUpFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign up: email and/or password already token.')
+  $('#message').text('Error on sign up: email and/or password already token. Try again with different credentials.')
 }
 
 const signInSuccess = function (data) {
+  $('.signed-in-page').show()
+  $('.starting-page').hide()
   console.log('data')
   store.user = data.user
   console.log(store)
-  $('#message').text('Sucessfully signed In!')
+  $('#message').text('Sucessfully signed In! Have fun playing the game! :)')
 }
 
 const signInFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign up: email and/or password already token.')
+  $('#message').text('Error on sign in: wrong email and/or password. Try again.')
 }
 
 const changePasswordSuccess = function (data) {
   console.log(data)
   console.log('Password sucessfully changed!')
-  $('#message').text('Password sucessfully changed.')
+  $('#message').text('Password sucessfully changed!')
 }
 
 const changePasswordFailure = function (error) {
@@ -37,6 +39,8 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
+  $('.starting-page').show()
+  $('.signed-in-page').hide()
   console.log(data)
   store.user = null
   console.log('Signed out succesfully!')
