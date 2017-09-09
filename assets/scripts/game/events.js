@@ -16,7 +16,7 @@ const onClickGameBoard = function (event) {
   // Outputing the result of the game once it ends
   const gameResult = function () {
     if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
-       (game[7] === 'X' && game[5] === 'X' && game[3] === 'X') ||
+       (game[2] === 'X' && game[4] === 'X' && game[6] === 'X') ||
        (game[0] === 'X' && game[1] === 'X' && game[2] === 'X') ||
        (game[3] === 'X' && game[4] === 'X' && game[5] === 'X') ||
        (game[6] === 'X' && game[7] === 'X' && game[8] === 'X') ||
@@ -27,7 +27,7 @@ const onClickGameBoard = function (event) {
       $('#result-message').text('Player1 is the Winner! Congrats! :)!')
       return 'Player1 is the Winner! Congrats! :)!'
     } else if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
-                (game[7] === 'O' && game[5] === 'O' && game[3] === 'O') ||
+                (game[2] === 'O' && game[4] === 'O' && game[6] === 'O') ||
                 (game[0] === 'O' && game[1] === 'O' && game[2] === 'O') ||
                 (game[3] === 'O' && game[4] === 'O' && game[5] === 'O') ||
                 (game[6] === 'O' && game[7] === 'O' && game[8] === 'O') ||
@@ -56,7 +56,7 @@ const onClickGameBoard = function (event) {
   if (click % 2 === 0) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
-    $(this).append("<img class='img' src='http://i.imgur.com/9AsTwDZ.jpg' />")
+    $(this).append("<img class='img' src='https://i.imgur.com/9AsTwDZ.jpg' />")
     game[$(this).attr('id')] = 'X'
     $(this).attr('id')
     console.log($(this).attr('id'))
