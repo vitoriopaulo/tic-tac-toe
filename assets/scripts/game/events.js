@@ -51,6 +51,7 @@ const onClickGameBoard = function (event) {
     $('#result-message').text('Box already selected. Click on an empty box.')
     return false
   }
+
   // Defining the turns of the players and the update on the game board when
   // the player clicks on an square
   if (click % 2 === 0) {
@@ -71,10 +72,22 @@ const onClickGameBoard = function (event) {
   // Outputing the result of the game
   gameResult()
 
+  // gameIsOver()
+
   // Working on the click accumulator
   click += 1
 }
-// Defining a function  to reset the game board
+// If the game is over and any of the players attempt to click on any square,
+// a message on top of the game is outputted, saying that game is over and
+// encourages the players to start a new game
+// const gameIsOver = function () {
+//   if (game[$(this).attr('id')] === ' ') {
+//     $('#result-message').text('Game is Over. Start a new game! :)')
+//     return false
+//   }
+
+// Defining a function  to reset the game board when the user click the
+// New Game botton in the interface of the web application
 const resetGameBoard = function () {
   // resetting the click
   click = 0

@@ -171,7 +171,15 @@ const gamesPlayed = [
 //   $(this).append(gamesPlayed.length)
 // }
 
-
+//If the game is over and any of the players attempt to click on any square,
+// a message on top of the game is outputted, saying that game is over and
+// encourages the players to start a new game
+// const gameIsOver = function () {
+//   if ((game[$(this).attr('id')] === player1 ||
+//   game[$(this).attr('id')] === player2 || game[$(this).attr('id')] === ' ') && gameResult() === true) {
+//   $('#result-message').text('Game is over! Start a new game! :)')
+//   return false
+// }
 module.exports = {
   onClickGameBoard
 }

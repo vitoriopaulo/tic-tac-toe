@@ -45,8 +45,6 @@
           <br>
           <button type="submit" name="submit" value="Sign Up!" class="btn btn-default button2">
             Sign Up!</button>
-
-          <!-- <input type="submit" name="submit" value="Sign up!" class="button"> -->
         </fieldset>
       </form>
       <br>
@@ -62,13 +60,11 @@
           <br>
           <button type="submit" name="submit" value="Log In!" class="btn btn-default button2">
             Sign In!</button>
-
-          <!-- <input type="submit" name="submit" value="Log In!" class="button"> -->
         </fieldset>
       </form>
       <br>
       <br>
-      <form class="signed-in-page" id="change-password">
+      <form class="starting-page" id="change-password">
         <fieldset>
           <legend>Change Password:</legend>
           <input type="password" name="passwords[old]" placeholder="Old password here." class="my-input">
@@ -79,22 +75,11 @@
           <br>
           <button type="submit" name="submit" value="Change Password!" class="btn btn-default button2">
             Change Password!</button>
-          <!-- <input type="submit" name="submit" value="Change Password!" class="button"> -->
         </fieldset>
       </form>
-<br>
-<br>
-<form class="signed-in-page" id="sign-out">
-  <fieldset>
-    <legend>Sign Out!</legend>
-    <button type="submit" name="submit" value="Sign Out!" class="btn btn-default button2">
-      Sign Out!</button>
-    <!-- <input type="submit" name="submit" value="Change Password!" class="button"> -->
-  </fieldset>
-</form>
 
-<br>
-<br>
+<!-- <br>
+<br> -->
 <h3 class="signed-in-page" id="result-message"> </h3>
 <!-- part of the code that defines the game board -->
 <div class="container-fluid main-div signed-in-page">
@@ -133,12 +118,19 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 col-xs-6 box3" > <button id="new-game" class="btn btn-default button signed-in-page">
+    <div class="col-md-12 col-xs-12 box3" > <button id="new-game" class="btn btn-default button signed-in-page">
       New Game!</button></div>
-    <div class="col-md-6 col-xs-6 box3"> <button class="btn btn-default button signed-in-page">
-      Save Game!</button></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 box3" > <form class="signed-in-page" id="sign-out">
+      <fieldset>
+        <button type="submit" name="submit" value="Sign Out!" class="btn btn-default button">
+          Sign Out!</button>
+    </fieldset>
+    </form></div>
   </div>
 </div>
+<br>
 <br>
 <br>
 <br>
