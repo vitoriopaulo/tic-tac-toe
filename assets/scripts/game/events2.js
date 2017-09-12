@@ -1,9 +1,3 @@
-const store = require('../store')
-
-$(() => {
-  $('.box').click(onClickGameBoard)
-})
-
 // Defining the players of the game
 const player1 = 'X'
 const player2 = 'O'
@@ -17,9 +11,9 @@ let game =
 // Defining an accumulattor for the clicks of the ongoing game
 let click = 0
 
-// Defining the game being played and all events associated
+// Defining the game being played
 const onClickGameBoard = function (event) {
-  // Setting up the possible results of the game once it is over
+  // Setting up the possible results of the game once it ends
   const gameResult = function () {
     if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
        (game[2] === 'X' && game[4] === 'X' && game[6] === 'X') ||
@@ -29,8 +23,7 @@ const onClickGameBoard = function (event) {
        (game[0] === 'X' && game[3] === 'X' && game[6] === 'X') ||
        (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
        (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
-      // console.log('Player1 is the Winner! Congrats! :)!')
-      store.game.over = true
+      console.log('Player1 is the Winner! Congrats! :)!')
       $('#result-message').text('Player1 is the Winner! Congrats! :)!')
       return 'Player1 is the Winner! Congrats! :)!'
     } else if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
@@ -41,13 +34,11 @@ const onClickGameBoard = function (event) {
                 (game[0] === 'O' && game[3] === 'O' && game[6] === 'O') ||
                 (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
                 (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
-      // console.log('Player2 is the Winner! Congrats! :)!')
-      store.game.over = true
+      console.log('Player2 is the Winner! Congrats! :)!')
       $('#result-message').text('Player2 is the Winner! Congrats! :)!')
       return 'Player2 is the Winner! Congrats! :)!'
     } else if (click === 8) {
-      // console.log('There is no Winner at this time. Game is a draw, try again :(')
-      store.game.over = true
+      console.log('There is no Winner at this time. Game is a draw, try again :(')
       $('#result-message').text('There is no Winner at this time. Game is a draw, try again :(')
       return 'There is no Winner at this time. Game is a draw, try again :('
     }
@@ -55,16 +46,14 @@ const onClickGameBoard = function (event) {
   // Avoiding one of the players to click in a box that have been already
   // clicked. Outputing a message on the screen to say that the box has been
   // already clicked and instructing the player to click in another box.
-
   if (game[$(this).attr('id')] === player1 ||
-     game[$(this).attr('id')] === player2) {
+    game[$(this).attr('id')] === player2) {
     $('#result-message').text('Box already selected. Click on an empty box.')
     return false
   }
 
   // Defining the turns of the players and the update on the game board when
-  // the player clicks on an square.
-
+  // the player clicks on an square
   if (click % 2 === 0) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
@@ -80,25 +69,27 @@ const onClickGameBoard = function (event) {
     $(this).attr('id')
     console.log($(this).attr('id'))
   }
-
-  const gameOver = function () {
-    if ((store.game.over === true) &&
-    (game[$(this).attr('id')] === player1 ||
-    game[$(this).attr('id')] === player2 ||
-    game[$(this).attr('id')] === ' ')) {
-      $('#result-message').text('Game is over! Start new game! :)!')
-      return false
-    }
-  }
-
-  gameOver()
-
   // Outputing the result of the game
   gameResult()
+
+  if (game[$(this).attr('id')] === player1 ||
+      game[$(this).attr('id')] === player2 ||
+      game[$(this).attr('id')] === ' ') {
+    $('#result-message').text('Game is over! Start new game! :).')
+    return false
+  }
 
   // Working on the click accumulator
   click += 1
 }
+// If the game is over and any of the players attempt to click on any square,
+// a message on top of the game is outputted, saying that game is over and
+// encourages the players to start a new game
+// const gameIsOver = function () {
+//   if (game[$(this).attr('id')] === ' ') {
+//     $('#result-message').text('Game is Over. Start a new game! :)')
+//     return false
+//   }
 
 // Defining a function  to reset the game board when the user click the
 // New Game botton in the interface of the web application
@@ -113,11 +104,10 @@ const resetGameBoard = function () {
     ' ', ' ', ' ',
     ' ', ' ', ' ']
   // resetting the messages
-  $('#result-message').text('New Game. Have fun! Player X starts. :)')
+  $('#result-message').text('Player 1 starts:')
 }
 
 // Starting a new game
-
 $('#new-game').click(resetGameBoard)
 
 module.exports = {

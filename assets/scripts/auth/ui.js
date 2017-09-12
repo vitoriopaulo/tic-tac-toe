@@ -28,13 +28,13 @@ const signInFailure = function (error) {
 
 const changePasswordSuccess = function (data) {
   console.log(data)
-  console.log('Password sucessfully changed!')
+  // console.log('Password sucessfully changed!')
   $('#message').text('Password sucessfully changed!')
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
-  console.log('Password already token. Try again.')
+  // console.log('Password already token. Try again.')
   $('#message').text('Password already token. Try again.')
 }
 
@@ -43,14 +43,14 @@ const signOutSuccess = function (data) {
   $('.signed-in-page').hide()
   console.log(data)
   store.user = null
-  console.log('Signed out succesfully!')
+  // console.log('Signed out succesfully!')
   $('#message').text('Signed out successfully!')
   console.log(store.user)
 }
 
 const signOutFailure = function (error) {
   console.log(error)
-  console.log('Failure signing out.')
+  // console.log('Failure signing out.')
   $('#message').text('Failure signing out.')
 }
 
