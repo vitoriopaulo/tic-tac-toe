@@ -1,8 +1,47 @@
-const store = require('../store')
+'use strict'
 
-$(() => {
-  $('.box').click(onClickGameBoard)
-})
+const gamesApi = require('./api.js')
+const gamesUi = require('./ui.js')
+const getFormFields = require('../../../lib/get-form-fields')
+
+// get in the habit of naming your handlers, it eases debugging.
+//
+// also, follow a convention for handlers. here, I name my handler
+// beginning with 'on' to denote that it is done when the GET /books
+// button is clicked
+const onGetGames = function (event) {
+  event.preventDefault()
+
+  gamesApi.getGames()
+    .then(gamesUi.gameOnSuccess)
+    .catch(gamesUi.gameOnError)
+}
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  gamesApi.updateGame(data)
+    .then(gamesUi.gameOnUpdateSuccess)
+    .catch(gamesUi.gameOnError)
+    // console.log('Please provide a game id!')
+}
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+console.log('Is OnCreateGame Working?')
+  const data = getFormFields(event.target)
+  gamesApi.createGame(data)
+    .then(gamesUi.gameOnPostSuccess)
+    .catch(gamesUi.gameOnError)
+    // console.log('Your new game was successfully added!')
+}
+
+// const store = require('../store')
+//
+// $(() => {
+//   $('.box').click(onClickGameBoard)
+// })
 
 // Defining the players of the game
 const player1 = 'X'
@@ -20,7 +59,7 @@ let click = 0
 // Defining the game being played and all events associated
 const onClickGameBoard = function (event) {
   // Setting up the possible results of the game once it is over
-  const gameResult = function () {
+  const gameIsOver = function () {
     if ((game[0] === 'X' && game[4] === 'X' && game[8] === 'X') ||
        (game[2] === 'X' && game[4] === 'X' && game[6] === 'X') ||
        (game[0] === 'X' && game[1] === 'X' && game[2] === 'X') ||
@@ -30,7 +69,7 @@ const onClickGameBoard = function (event) {
        (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
        (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
       // console.log('Player1 is the Winner! Congrats! :)!')
-      store.game.over = true
+      // store.game.over = true
       $('#result-message').text('Player1 is the Winner! Congrats! :)!')
       return 'Player1 is the Winner! Congrats! :)!'
     } else if ((game[0] === 'O' && game[4] === 'O' && game[8] === 'O') ||
@@ -42,22 +81,25 @@ const onClickGameBoard = function (event) {
                 (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
                 (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
       // console.log('Player2 is the Winner! Congrats! :)!')
-      store.game.over = true
+      // store.game.over = true
       $('#result-message').text('Player2 is the Winner! Congrats! :)!')
       return 'Player2 is the Winner! Congrats! :)!'
-    } else if (click === 8) {
+    } else if (click === 9) {
       // console.log('There is no Winner at this time. Game is a draw, try again :(')
-      store.game.over = true
+      // store.game.over = true
       $('#result-message').text('There is no Winner at this time. Game is a draw, try again :(')
       return 'There is no Winner at this time. Game is a draw, try again :('
     }
   }
-  // Avoiding one of the players to click in a box that have been already
-  // clicked. Outputing a message on the screen to say that the box has been
-  // already clicked and instructing the player to click in another box.
 
-  if (game[$(this).attr('id')] === player1 ||
-     game[$(this).attr('id')] === player2) {
+  // else play the game
+  if (gameIsOver()) {
+    console.log('This is the id:', game[$(this).attr('id')])
+    $('#result-message').text('Game Over. Start new game. :)')
+    return false
+  } else if (game[$(this).attr('id')] === player1 ||
+  game[$(this).attr('id')] === player2) {
+    console.log('This is the id:', game[$(this).attr('id')])
     $('#result-message').text('Box already selected. Click on an empty box.')
     return false
   }
@@ -80,21 +122,8 @@ const onClickGameBoard = function (event) {
     $(this).attr('id')
     console.log($(this).attr('id'))
   }
-
-  const gameOver = function () {
-    if ((store.game.over === true) &&
-    (game[$(this).attr('id')] === player1 ||
-    game[$(this).attr('id')] === player2 ||
-    game[$(this).attr('id')] === ' ')) {
-      $('#result-message').text('Game is over! Start new game! :)!')
-      return false
-    }
-  }
-
-  gameOver()
-
   // Outputing the result of the game
-  gameResult()
+  gameIsOver()
 
   // Working on the click accumulator
   click += 1
@@ -121,5 +150,8 @@ const resetGameBoard = function () {
 $('#new-game').click(resetGameBoard)
 
 module.exports = {
-  onClickGameBoard
+  onClickGameBoard,
+  onGetGames,
+  onUpdateGame,
+  onCreateGame
 }
