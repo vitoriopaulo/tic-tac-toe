@@ -15,10 +15,11 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('.signed-in-page').show()
   $('.starting-page').hide()
+  $('.box').hide()
   console.log('data')
   store.user = data.user
   console.log(store)
-  $('#message').text('Sucessfully signed In! Have fun playing the game! :)')
+  $('#message').text('Sucessfully signed In! Click on botton New Game and start playing! No worries, gameboard will load. Have fun! :)')
 }
 
 const signInFailure = function (error) {

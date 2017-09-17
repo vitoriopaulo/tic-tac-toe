@@ -14,7 +14,6 @@ const createGame = function () {
       'cells': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       'over': false
     }
-
   })
 }
 

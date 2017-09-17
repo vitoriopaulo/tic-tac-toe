@@ -29,7 +29,8 @@ const onUpdateGame = function (event) {
 
 const onCreateGame = function (event) {
   event.preventDefault()
-console.log('Is OnCreateGame Working?')
+  $('.box').show()
+  console.log('Is OnCreateGame Working?')
   const data = getFormFields(event.target)
   gamesApi.createGame(data)
     .then(gamesUi.gameOnPostSuccess)
@@ -54,7 +55,7 @@ let game =
     ' ', ' ', ' ']
 
 // Defining an accumulattor for the clicks of the ongoing game
-let click = 0
+let click = 1
 
 // Defining the game being played and all events associated
 const onClickGameBoard = function (event) {
@@ -68,7 +69,7 @@ const onClickGameBoard = function (event) {
        (game[0] === 'X' && game[3] === 'X' && game[6] === 'X') ||
        (game[1] === 'X' && game[4] === 'X' && game[7] === 'X') ||
        (game[2] === 'X' && game[5] === 'X' && game[8] === 'X')) {
-      // console.log('Player1 is the Winner! Congrats! :)!')
+      console.log('Player1 is the Winner! Congrats! :)!')
       // store.game.over = true
       $('#result-message').text('Player1 is the Winner! Congrats! :)!')
       return 'Player1 is the Winner! Congrats! :)!'
@@ -80,12 +81,13 @@ const onClickGameBoard = function (event) {
                 (game[0] === 'O' && game[3] === 'O' && game[6] === 'O') ||
                 (game[1] === 'O' && game[4] === 'O' && game[7] === 'O') ||
                 (game[2] === 'O' && game[5] === 'O' && game[8] === 'O')) {
-      // console.log('Player2 is the Winner! Congrats! :)!')
+      console.log('Player2 is the Winner! Congrats! :)!')
       // store.game.over = true
       $('#result-message').text('Player2 is the Winner! Congrats! :)!')
       return 'Player2 is the Winner! Congrats! :)!'
-    } else if (click === 9) {
-      // console.log('There is no Winner at this time. Game is a draw, try again :(')
+    } else if (click === 10) {
+      // console.log('Number of clicks is ' + click)
+      console.log('There is no Winner at this time. Game is a draw, try again :(')
       // store.game.over = true
       $('#result-message').text('There is no Winner at this time. Game is a draw, try again :(')
       return 'There is no Winner at this time. Game is a draw, try again :('
@@ -107,14 +109,14 @@ const onClickGameBoard = function (event) {
   // Defining the turns of the players and the update on the game board when
   // the player clicks on an square.
 
-  if (click % 2 === 0) {
+  if (click % 2 === 1) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
     $(this).append("<img class='img' src='https://i.imgur.com/9AsTwDZ.jpg' />")
     game[$(this).attr('id')] = 'X'
     $(this).attr('id')
     console.log($(this).attr('id'))
-  } else if (click % 2 === 1) {
+  } else if (click % 2 === 0) {
     console.log('It is player1 turn now.')
     $('#result-message').text('It is player1 turn now.')
     $(this).append("<img class='img' src='https://i.imgur.com/DiXKSpi.jpg' />")
@@ -123,6 +125,8 @@ const onClickGameBoard = function (event) {
     console.log($(this).attr('id'))
   }
   // Outputing the result of the game
+
+  console.log('This is click :' + click)
   gameIsOver()
 
   // Working on the click accumulator
@@ -133,7 +137,7 @@ const onClickGameBoard = function (event) {
 // New Game botton in the interface of the web application
 const resetGameBoard = function () {
   // resetting the click
-  click = 0
+  click = 1
   // resetting the images
   $('.img').remove()
   // resetting the Os and Xs and empty spaces of the game
@@ -146,8 +150,7 @@ const resetGameBoard = function () {
 }
 
 // Starting a new game
-
-$('#new-game').click(resetGameBoard)
+$('#new-game').click(resetGameBoard).show('.box')
 
 module.exports = {
   onClickGameBoard,
