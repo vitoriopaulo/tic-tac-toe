@@ -21,5 +21,5 @@ $(() => {
   $('.box').click(gameEvents.onClickGameBoard)
   $('.box').click(gameEvents.onUpdateGame)
   $('#new-game').click(gameEvents.onCreateGame)
-  // $('').text(gameEvents.onGetGames)
+  $('total-games').text(gameEvents.onGetGames)
 })

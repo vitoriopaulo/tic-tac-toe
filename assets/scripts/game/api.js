@@ -18,6 +18,7 @@ const createGame = function () {
 }
 
 const getGames = function () {
+  // console.log('is function getGames working?')
   return $.ajax({
     url: config.apiOrigin + '/games/?over=true',
     method: 'GET',
@@ -28,7 +29,7 @@ const getGames = function () {
 }
 
 const updateGame = function () {
-  // console.log(data)
+  // console.log('is updateGame working?')
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
