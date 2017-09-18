@@ -21,28 +21,24 @@ const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
 
+  // console.log('onUpdateGame event function working?')
+
   gamesApi.updateGame(data)
     .then(gamesUi.gameOnUpdateSuccess)
     .catch(gamesUi.gameOnError)
-    // console.log('Please provide a game id!')
+  console.log('Please provide a game id!')
 }
 
 const onCreateGame = function (event) {
   event.preventDefault()
   $('.box').show()
-  console.log('Is OnCreateGame Working?')
+  console.log('Is onCreateGame Working?')
   const data = getFormFields(event.target)
   gamesApi.createGame(data)
     .then(gamesUi.gameOnPostSuccess)
     .catch(gamesUi.gameOnError)
     // console.log('Your new game was successfully added!')
 }
-
-// const store = require('../store')
-//
-// $(() => {
-//   $('.box').click(onClickGameBoard)
-// })
 
 // Defining the players of the game
 const player1 = 'X'
@@ -55,7 +51,7 @@ let game =
     ' ', ' ', ' ']
 
 // Defining an accumulattor for the clicks of the ongoing game
-let click = 1
+let click = 0
 
 // Defining the game being played and all events associated
 const onClickGameBoard = function (event) {
@@ -85,7 +81,7 @@ const onClickGameBoard = function (event) {
       // store.game.over = true
       $('#result-message').text('Player2 is the Winner! Congrats! :)!')
       return 'Player2 is the Winner! Congrats! :)!'
-    } else if (click === 10) {
+    } else if (click === 8) {
       // console.log('Number of clicks is ' + click)
       console.log('There is no Winner at this time. Game is a draw, try again :(')
       // store.game.over = true
@@ -96,8 +92,8 @@ const onClickGameBoard = function (event) {
 
   // else play the game
   if (gameIsOver()) {
-    console.log('This is the id:', game[$(this).attr('id')])
-    $('#result-message').text('Game Over. Start new game. :)')
+    console.log('This is the id:', game[$(this).attr('id')] + 'Game is over.')
+    // $('#result-message').text('Game Over. Start new game. :)')
     return false
   } else if (game[$(this).attr('id')] === player1 ||
   game[$(this).attr('id')] === player2) {
@@ -109,14 +105,14 @@ const onClickGameBoard = function (event) {
   // Defining the turns of the players and the update on the game board when
   // the player clicks on an square.
 
-  if (click % 2 === 1) {
+  if (click % 2 === 0) {
     console.log('It is player2 turn now.')
     $('#result-message').text('It is player2 turn now.')
     $(this).append("<img class='img' src='https://i.imgur.com/9AsTwDZ.jpg' />")
     game[$(this).attr('id')] = 'X'
     $(this).attr('id')
     console.log($(this).attr('id'))
-  } else if (click % 2 === 0) {
+  } else if (click % 2 === 1) {
     console.log('It is player1 turn now.')
     $('#result-message').text('It is player1 turn now.')
     $(this).append("<img class='img' src='https://i.imgur.com/DiXKSpi.jpg' />")
@@ -128,8 +124,8 @@ const onClickGameBoard = function (event) {
 
   console.log('This is click :' + click)
   gameIsOver()
-
   // Working on the click accumulator
+
   click += 1
 }
 
@@ -137,7 +133,7 @@ const onClickGameBoard = function (event) {
 // New Game botton in the interface of the web application
 const resetGameBoard = function () {
   // resetting the click
-  click = 1
+  click = 0
   // resetting the images
   $('.img').remove()
   // resetting the Os and Xs and empty spaces of the game
@@ -150,7 +146,7 @@ const resetGameBoard = function () {
 }
 
 // Starting a new game
-$('#new-game').click(resetGameBoard).show('.box')
+$('#new-game').click(resetGameBoard)
 
 module.exports = {
   onClickGameBoard,
