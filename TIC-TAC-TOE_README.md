@@ -1,7 +1,7 @@
 # tic-tac-toe-game
 Repo for the 1st project developed in the GA WDI class20.
 
-This is the very first full-stack project undergoing development in the GA WDI class20 Web Development Immersive Bootcamp Boston.
+This is the very first front-end project undergoing development in the GA WDI class20 Web Development Immersive Bootcamp Boston.
 
 Technologies used: HTML5, Css, Scss, Javascript, Jquery, ajax.
 
@@ -19,12 +19,12 @@ Finally, the end user can change his password if want or logout from the applica
 The following url shows the skectched wireframes that explains the flow of usage of the application. It helps to visualize the concept behind the creation of the front-end of the api:
 https://i.imgur.com/1sjoQGK.jpg
 
-In regards to the back-end of the application, it has some pending matters that will be troubleshooted throughout the program:
+In regards to the back-end of the application, it has some small flaws that will be troubleshooted throughout the program:
 1) Related to the game-logic:
-Game logic acceptance of the result only as a Draw if game ends in the ninth click. Game is not allowing player X to win the game on the ninth click. This specific part of the Code needs to be reviewed and trobleshooted.
+Game logic acceptance of the result only as a Draw if game ends in the ninth click. Game engine is not allowing player X to win the game on the ninth click. This specific part of the Code needs to be reviewed and trobleshooted.
 
 1) Related to the game-api:
-Functionality of updating the created game, move by move by the end user while the game is being played,  is pending. Functionality related to the retrieval of the statistics of the game (total games played) to be displayed in the UI of the api pending.
+Functionality of updating the created game, move by move by the end user while the game is being played,  is pending. Functionality related to the retrieval of the statistics of the game (total games played) to be displayed in the UI of the api also pending.
 This two specific part of the code related to the back-end of the application needs to be troubleshooted as well.
 
 The working in progress web aplication in beta-testing status has already been deployed and is hosted on my personal Github pages account. Url follows:
