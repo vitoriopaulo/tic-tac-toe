@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <title> TIC TAC TOE GAME </title>
+</head>
+
+<body class="container-fluid">
+<header>
+
+<div class="row">
+  <div class="col-md-12">
+  <h1 class="title"> TIC   TAC   TOE   GAME </h1>
+</div>
+
+</header>
+<br>
+<br>
+
+<!-- part of the code related to authentication -->
+
+<p id="message" class="message"> </p>
+<br>
+<br>
+<h1>Tic Tac Toe Game!</h1>
+      <form class="starting-page" id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="email" name="credentials[email]" placeholder="Your email here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <input type="password" name="credentials[password]" placeholder="Your password here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <button type="submit" name="submit" value="submit" class="btn btn-default button1">
+            Sign Up!</button>
+        </fieldset>
+      </form>
+      <br>
+      <br>
+      <form class="starting-page" id="sign-in">
+        <fieldset>
+          <legend>Sign In!</legend>
+          <input type="email" name="credentials[email]" placeholder="Your email here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <input type="password" name="credentials[password]" placeholder="Your password here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <button id="bt-sign-in" type="submit" name="submit" value="submit" class="btn btn-default button2">
+            Sign In!</button>
+        </fieldset>
+      </form>
+      <br>
+      <br>
+
+<h3 class="signed-in-page" id="result-message"> </h3>
+<!-- part of the code that defines the game board -->
+<div class="container-fluid main-div signed-in-page">
+  <div class="row">
+    <div id="0" class="col-md-4 col-xs-4 box">  </div>
+    <div id="1" class="col-md-4 col-xs-4 box">  </div>
+    <div id="2" class="col-md-4 col-xs-4 box">  </div>
+  </div>
+
+  <div class="row">
+    <div id="3" class="col-md-4 col-xs-4 box">  </div>
+    <div id="4" class="col-md-4 col-xs-4 box">  </div>
+    <div id="5" class="col-md-4 col-xs-4 box">  </div>
+  </div>
+
+  <div class="row">
+    <div  id="6" class="col-md-4 col-xs-4 box">  </div>
+    <div id="7" class="col-md-4 col-xs-4 box">  </div>
+    <div id="8" class="col-md-4 col-xs-4 box"> </div>
+  </div>
+<!-- </div> -->
+  <div class="row">
+    <div class="col-md-6 col-xs-6"> <h3> Player 1: <img src="https://i.imgur.com/9AsTwDZ.jpg" width=60px> </h3> </div>
+    <div class="col-md-6 col-xs-6"> <h3> Player 2: <img src="https://i.imgur.com/DiXKSpi.jpg" width=60px> </h3> </div>
+  </div>
+<br>
+<br>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 box4"> <h4> Total Games: </h4> <h4 id="total-games"> </h4></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 box3" > <button id="new-game" class="btn btn-default button3 signed-in-page">
+      New Game!</button></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 box3" > <form class="signed-in-page" id="sign-out">
+      <fieldset>
+        <button type="submit" name="submit" value="Sign Out!" class="btn btn-default button4">
+          Sign Out!</button>
+    </fieldset>
+    </form></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12 box3" >
+      <form class="signed-in-page" id="change-password">
+        <fieldset>
+          <legend>Change Password:</legend>
+          <input type="password" name="passwords[old]" placeholder="Old password here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <input type="password" name="passwords[new]" placeholder="New password here." class="my-input" autocomplete="off">
+          <br>
+          <br>
+          <button type="submit" name="submit" value="Change Password!" class="btn btn-default button5">
+            Change Password!</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer"> <p class="copyright"> Copyright 2017 ::
+Created with much &hearts; by Vitorio Paulo for
+GA</p>
+</footer>
+<!-- <script>
+
+</script> -->
+</body>
+</html>
